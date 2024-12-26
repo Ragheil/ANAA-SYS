@@ -83,6 +83,7 @@
   max-width: 500px; /* Add a max-width to control form size */
   width: 100%; /* Ensure the form still takes full width on smaller screens */
   border-radius: 15px; /* Rounded corners */
+  height: auto;
 }
   
 .login-form h1 {

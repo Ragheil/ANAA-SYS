@@ -38,7 +38,7 @@ const SignUp = () => {
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
@@ -49,7 +49,7 @@ const SignUp = () => {
             />
           </div>
           <div className="input-group">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input
               type={showPassword ? 'text' : 'password'}
               id="password"
@@ -66,7 +66,7 @@ const SignUp = () => {
             </span>
           </div>
           <div className="input-group">
-            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               type={showConfirmPassword ? 'text' : 'password'}
               id="confirmPassword"
