@@ -1,0 +1,182 @@
+/* Login.css */
+
+/* Container styling */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left side (Image section) */
+.login-image {
+  flex: 1;
+  background-color: #060b37; /* Background color for image section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff; /* Text color for titles */
+}
+
+/* Titles */
+.login-image h1 {
+  color: #fff500; /* Title color */
+  font-size: 100px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: 'Arial', serif; /* Font style */
+  text-shadow: 0px 3px 0px #0b47bf, -1px -3px 0px #0b47bf, 
+              1px -2px 0px #0b47bf, -3px 6px 0px #0b47bf; /* Pink outline effect */
+}
+
+.login-image h3 {
+  color: #fff500; /* Subtitle color */
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Arial', serif; /* Font style */
+  text-shadow: 2px 2px 0px #0b47bf, -2px -2px 0px #0b47bf, 
+              2px -2px 0px #0b47bf, -2px 2px 0px #0b47bf; /* Pink outline effect */
+}
+
+/* Horizontal line */
+.login-image hr {
+  width: 100%; /* Ensure full width */
+  max-width: 85%; /* Limit the maximum width */
+  height: 2px;
+  background-color: #fff500;
+  border: none;
+  margin: 10px 0 20px;
+}
+
+/* Logo styling */
+.login-image img {
+  width: 100%; /* Logo scales with container width */
+  max-width: 500px; /* Maximum size for large screens */
+  height: auto;
+  object-fit: contain; /* Ensures image fits properly without distortion */
+  margin-top: 10px; /* Spacing below the line */
+}
+
+/* Right side (Login form section) */
+.login-form {
+  flex: 1;
+  background-color: #f0f0f0; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+  
+.login-form h1 {
+  margin-bottom: 20px;
+  font-size: 100px;
+  color: #fff500; /* Form title color */
+  font-family: 'Arial', serif; /* Font style */
+  text-shadow: 3px 3px 0px #0b47bf, -3px -3px 0px #0b47bf, 
+              3px -3px 0px #0b47bf, -3px 3px 0px #0b47bf; /* Pink outline effect */
+}
+
+/* Input group styling */
+.input-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 300px; /* Prevent stretching on larger screens */
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+.login-btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    height: 40%; /* Adjust height for smaller screens */
+    padding: 10px;
+  }
+
+  .login-form {
+    height: 60%;
+    padding: 10px;
+  }
+
+  .login-image h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-image h3 {
+    font-size: 0.9rem;
+  }
+
+  .login-image img {
+    width: 70%; /* Logo scales down for smaller screens */
+    max-width: 200px;
+  }
+
+  .login-image hr {
+    width: 100%; /* Ensure the line is visible at full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-image h1 {
+    font-size: 1.2rem;
+  }
+
+  .login-image h3 {
+    font-size: 0.8rem;
+  }
+
+  .login-image img {
+    width: 70%; /* Smaller logo for mobile */
+    max-width: 300px;
+  }
+
+  .input-group input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .login-image hr {
+    width: 100%; /* Ensure the line is visible across all mobile sizes */
+  }
+}
