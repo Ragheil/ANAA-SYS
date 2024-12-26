@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom to navigate between screens
-import '../styles/Login.css'; // Import the CSS file
-import logo from '../images/Anaa-sys-logo.png';
+import { Link } from 'react-router-dom';
+import '../styles/SignUp.css'; // Reuse the same styles
+import logo from '../images/Anaa-sys-logo.png'; // Reuse logo
 
-const Login = () => {
+const SignUp = () => {
   // State to manage form input
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State to toggle confirm password visibility
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simple validation (you can customize this logic)
-    if (email && password) {
-      alert('Login successful!');
+    if (email && password && password === confirmPassword) {
+      alert('Sign up successful!');
       // Here you would typically send the data to your backend or authentication service
     } else {
-      alert('Please enter both email and password.');
+      alert('Please ensure passwords match and all fields are filled.');
     }
   };
 
@@ -28,12 +30,12 @@ const Login = () => {
         <h1 className="title">ANAA SYS</h1>
         <h3 className="subtitle">Availability Notification and Alerting System</h3>
         <hr className="divider" />
-        <img src={logo} alt="Login" className="logo" />
+        <img src={logo} alt="Sign Up" className="logo" />
       </div>
 
-      {/* Right side for login form */}
+      {/* Right side for sign up form */}
       <div className="login-form">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="email">Email:</label>
@@ -63,15 +65,32 @@ const Login = () => {
               {showPassword ? '🙈' : '👁️'}
             </span>
           </div>
-          <button type="submit" className="login-btn">Login</button>
+          <div className="input-group">
+            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <input
+              type={showConfirmPassword ? 'text' : 'password'}
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Confirm your password"
+              required
+            />
+            <span
+              className="eye-icon"
+              onClick={() => setShowConfirmPassword((prev) => !prev)}
+            >
+              {showConfirmPassword ? '🙈' : '👁️'}
+            </span>
+          </div>
+          <button type="submit" className="login-btn">Sign Up</button>
         </form>
-        {/* Link to the Sign Up page */}
+        {/* Link to the Login page */}
         <p className="signup-link">
-          Don't have an account? <Link to="/signup">Sign up</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
