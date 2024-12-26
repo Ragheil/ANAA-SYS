@@ -43,10 +43,10 @@
 .login-image hr {
   width: 100%; /* Ensure full width */
   max-width: 85%; /* Limit the maximum width */
-  height: 2px;
+  height: 4px;
   background-color: #fff500;
   border: none;
-  margin: 10px 0 20px;
+  margin: 5px 0 20px;
 }
 
 /* Logo styling */
@@ -55,7 +55,7 @@
   max-width: 500px; /* Maximum size for large screens */
   height: auto;
   object-fit: contain; /* Ensures image fits properly without distortion */
-  margin-top: 10px; /* Spacing below the line */
+  margin-top: 1px; /* Spacing below the line */
 }
 
 /* Right side (Login form section) */
