@@ -6,6 +6,7 @@ const Login = () => {
   // State to manage form input
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -47,13 +48,19 @@ const Login = () => {
           <div className="input-group">
             <label htmlFor="password">Password:</label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
             />
+            <span
+              className="eye-icon"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? '🙈' : '👁️'}
+            </span>
           </div>
           <button type="submit" className="login-btn">Login</button>
         </form>

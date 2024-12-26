@@ -48,7 +48,19 @@
   border: none;
   margin: 5px 0 20px;
 }
-
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 64%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+  transition: color 0.3s;
+}
+.eye-icon:hover {
+  color: #4caf50;
+}
 /* Logo styling */
 .login-image img {
   width: 100%; /* Logo scales with container width */
@@ -67,6 +79,10 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-sizing: border-box;
+  max-width: 500px; /* Add a max-width to control form size */
+  width: 100%; /* Ensure the form still takes full width on smaller screens */
+  border-radius: 15px; /* Rounded corners */
 }
   
 .login-form h1 {
@@ -76,46 +92,76 @@
   font-family: 'Arial', serif; /* Font style */
   text-shadow: 3px 3px 0px #0b47bf, -3px -3px 0px #0b47bf, 
               3px -3px 0px #0b47bf, -3px 3px 0px #0b47bf; /* Pink outline effect */
+  text-align: center;
 }
 
 /* Input group styling */
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   width: 100%;
-  max-width: 300px; /* Prevent stretching on larger screens */
-}
+  max-width: 400px; /* Limit width of input fields to prevent stretching */
+  position: relative;
 
-.input-group label {
-  font-size: 14px;
-  margin-bottom: 5px;
-  display: block;
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  padding-right: 30px; /* Add padding for the eye icon */
+
+}
+
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  transition: all 0.3s ease; /* Smooth transition for focus effect */
+  padding-right: 30px; /* Add padding for the eye icon */
+
+}
+.input-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Green border on focus */
+}
+
+.input-group input::placeholder {
+  color: #888; /* Light placeholder text */
 }
 
 /* Button styling */
 .login-btn {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  background-color: #4caf50;
+  background-color: #0a136b;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%;
+  width: 100%; /* Full width for button */
   margin-top: 10px;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+
 }
 
 .login-btn:hover {
   background-color: #45a049;
 }
 
+.login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow on button focus */
+}
 /* Responsive Design */
 
 /* Small devices (phones, less than 768px) */
@@ -124,26 +170,36 @@
     flex-direction: column;
   }
 
+  .login-form h1 {
+    font-size: 89px;
+    margin-top: 1px; /* Adjust title font size for smaller screens */
+    
+  }
+
   .login-image {
-    height: 40%; /* Adjust height for smaller screens */
+    height: 50%; /* Adjust height for smaller screens */
     padding: 10px;
   }
 
   .login-form {
     height: 60%;
     padding: 10px;
+    max-width: 100%;
+
   }
 
   .login-image h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    margin-top: auto;
+
   }
 
   .login-image h3 {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
   }
 
   .login-image img {
-    width: 70%; /* Logo scales down for smaller screens */
+    width: 100%; /* Logo scales down for smaller screens */
     max-width: 200px;
   }
 
@@ -153,22 +209,31 @@
 }
 
 @media (max-width: 480px) {
+
+  .login-form {
+    padding: 10px;
+    max-width: 90%; /* Ensure it doesn't stretch too wide on very small screens */
+  }
+
   .login-image h1 {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
   }
 
   .login-image h3 {
-    font-size: 0.8rem;
+    font-size: 1.8rem;
   }
 
   .login-image img {
-    width: 70%; /* Smaller logo for mobile */
+    width: 60%; /* Smaller logo for mobile */
     max-width: 300px;
+    margin-top: auto;
   }
 
   .input-group input {
     padding: 8px;
     font-size: 14px;
+    padding-right: 30px; /* Add padding for the eye icon */
+
   }
 
   .login-btn {
