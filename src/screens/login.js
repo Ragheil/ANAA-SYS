@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom to navigate between screens
+import { Link, useNavigate  } from 'react-router-dom'; // Import Link from react-router-dom to navigate between screens
 import '../styles/Login.css'; // Import the CSS file
 import logo from '../images/Anaa-sys-logo.png';
 
@@ -8,18 +8,28 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const navigate = useNavigate(); // Initialize the navigate function
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ // const handleSubmit = (e) => {
+   // e.preventDefault();
     // Simple validation (you can customize this logic)
-    if (email && password) {
-      alert('Login successful!');
-      // Here you would typically send the data to your backend or authentication service
-    } else {
-      alert('Please enter both email and password.');
-    }
+   // if (email && password) {
+   //   alert('Login successful!');
+   //   navigate('/dashboard'); // Redirect to the Dashboard screen
+   // } else {
+   //   alert('Please enter both email and password.');
+   // }
+//  };
+
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    // IGNORE fake login validation below, directly navigate to Dashboard
+    navigate('/dashboard'); // Hyperlink to Dashboard after login button click
   };
+
+
 
   return (
     <div className="login-container">
@@ -38,7 +48,7 @@ const Login = () => {
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
-              type="email"
+              type="test" //ilisi lang nig email after testing
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
