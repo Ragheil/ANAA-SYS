@@ -129,7 +129,7 @@
 
 }
 .input-group input:focus {
-  border-color: #4caf50;
+  border-color: #000000;
   outline: none;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Green border on focus */
 }
@@ -212,7 +212,7 @@
 
   .login-form {
     padding: 10px;
-    max-width: 90%; /* Ensure it doesn't stretch too wide on very small screens */
+    max-width: 100%; /* Ensure it doesn't stretch too wide on very small screens */
   }
 
   .login-image h1 {
