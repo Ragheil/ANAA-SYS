@@ -64,39 +64,45 @@ const Dashboard = () => {
         {/* Dashboard Content */}
         <div className="dashboard-content">
           <div className="widget-container">
-            <div className="widget available">
-              <h3>Available</h3>
-              <img src={checkIcon} alt="Available" className="widget-icon small-icon" />
-              <p>3 Faculty</p>
-            </div>
-            <div className="widget busy">
-              <h3>Busy</h3>
-              <img src={clockIcon} alt="Busy" className="widget-icon small-icon" />
-              <p>2 Faculty</p>
-            </div>
-            <div className="widget offline">
-              <h3>Offline</h3>
-              <img src={offlineIcon} alt="Offline" className="widget-icon small-icon" />
-              <p>1 Faculty</p>
+            <div className="widget-container-three-columns">
+              <div className="widget available">
+                <h3>Available</h3>
+                <img src={checkIcon} alt="Available" className="widget-icon small-icon" />
+                <p>3 Faculty</p>
+              </div>
+              <div className="widget busy">
+                <h3>Busy</h3>
+                <img src={clockIcon} alt="Busy" className="widget-icon small-icon" />
+                <p>2 Faculty</p>
+              </div>
+              <div className="widget offline">
+                <h3>Offline</h3>
+                <img src={offlineIcon} alt="Offline" className="widget-icon small-icon" />
+                <p>1 Faculty</p>
+              </div>
             </div>
           </div>
 
-          <div className="chart-container">
-            <h3>Bar Chart <img src={barGraphIcon} alt="Bar Graph" className="chart-icon small-icon" /></h3>
-            <div className="bar-chart">Bar Chart Placeholder</div>
-          </div>
-
-          <div className="notifications-container">
-            <h3>Notifications</h3>
-            <div className="notifications-list">
-              <ul>
-                <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 16 mins ago</li>
-                <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 23 mins ago</li>
-                <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 37 mins ago</li>
-                <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 30 mins ago</li>
-              </ul>
+          {/* Chart and Notifications in One Row, Two Columns */}
+          <div className="chart-notifications-container">
+            <div className="chart-container">
+              <h3>Bar Chart <img src={barGraphIcon} alt="Bar Graph" className="chart-icon small-icon" /></h3>
+              <div className="bar-chart">Bar Chart Placeholder</div>
             </div>
-            <button>Show All</button>
+            <div className="notifications-container">
+              <h3>Notifications</h3>
+              <div className="notifications-list">
+                <div className="notifications-two-column">
+                  <ul>
+                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 16 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 23 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 37 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 30 mins ago</li>
+                  </ul>
+                </div>
+              </div>
+              <button>Show All</button>
+            </div>
           </div>
         </div>
       </div>

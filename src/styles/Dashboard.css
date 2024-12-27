@@ -91,12 +91,14 @@
   cursor: pointer;
 }
 
-/* Widgets */
-.dashboard-widgets {
+/* Widget Container */
+.widget-container-three-columns {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
+/* Widget */
 .widget {
   padding: 20px;
   background: #ecf0f1;
@@ -125,11 +127,23 @@
   margin-top: 10px;
 }
 
+/* Chart and Notifications Container - One Row, Two Columns */
+.chart-notifications-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.chart-container,
+.notifications-container {
+  flex: 1;
+  margin: 0 10px;
+}
+
 /* Chart Container */
 .chart-container {
-  margin-top: 20px;
-  padding: 20px;
   background-color: #ecf0f1;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -141,20 +155,26 @@
   margin-left: 5px;
 }
 
-/* Notifications */
+/* Notifications Container */
 .notifications-container {
-  margin-top: 20px;
-  padding: 20px;
   background-color: #ecf0f1;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.notifications-list ul {
-  list-style-type: none;
-  padding: 0;
+/* Notifications List */
+.notifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+.notifications-two-column ul {
+  width: 48%;
+}
+
+/* Notification Items */
 .notifications-list li {
   display: flex;
   align-items: center;
@@ -197,5 +217,9 @@
   .message-icon {
     width: 14px;
     height: 14px;
+  }
+
+  .chart-notifications-container {
+    flex-direction: column;
   }
 }
