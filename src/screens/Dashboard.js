@@ -33,19 +33,19 @@ const Dashboard = () => {
         <ul className="sidebar-links">
           <li>
             <Link to="/today" className="sidebar-link">
-              <img src={todayIcon} alt="Today" className="menu-icon" />
+              <img src={todayIcon} alt="Today" className="menu-icon today-icon" />
               <span className="menu-text">Today</span>
             </Link>
           </li>
           <li>
             <Link to="/faculty" className="sidebar-link">
-              <img src={facultyIcon} alt="Faculty" className="menu-icon" />
+              <img src={facultyIcon} alt="Faculty" className="menu-icon faculty-icon" />
               <span className="menu-text">Faculty</span>
             </Link>
           </li>
           <li>
             <Link to="/queue" className="sidebar-link">
-              <img src={queueIcon} alt="Queue" className="menu-icon" />
+              <img src={queueIcon} alt="Queue" className="menu-icon queue-icon" />
               <span className="menu-text">Queue</span>
             </Link>
           </li>
@@ -94,18 +94,17 @@ const Dashboard = () => {
           {/* Chart and Notifications in One Row, Two Columns */}
           <div className="chart-notifications-container">
             <div className="chart-container">
-              <h3>Bar Chart <img src={barGraphIcon} alt="Bar Graph" className="chart-icon small-icon" /></h3>
-              <div className="bar-chart">Bar Chart Placeholder</div>
+              <h3>Bar Chart <img src={barGraphIcon} alt="Bar Graph" className="chart-icon bar-graph" /></h3>
             </div>
             <div className="notifications-container">
               <h3>Notifications</h3>
               <div className="notifications-list">
                 <div className="notifications-two-column">
                   <ul>
-                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 16 mins ago</li>
-                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 23 mins ago</li>
-                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 37 mins ago</li>
-                    <li><img src={messageIcon} alt="Message" className="message-icon small-icon" /> New message - 30 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon notification-icon" /> New message - 16 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon notification-icon" /> New message - 23 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon notification-icon" /> New message - 37 mins ago</li>
+                    <li><img src={messageIcon} alt="Message" className="message-icon notification-icon" /> New message - 30 mins ago</li>
                   </ul>
                 </div>
               </div>
