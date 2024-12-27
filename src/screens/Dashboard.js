@@ -13,7 +13,7 @@ import facultyIcon from '../images/faculty.png';
 import queueIcon from '../images/queue.png';
 
 const Dashboard = () => {
-  // State to toggle sidebar visibility
+  // State to toggle sidebar visibility (icons and text)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Toggle sidebar function
@@ -24,22 +24,30 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* Sidebar Menu */}
-      <aside className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
-        {/* Clickable Sidebar Title to Toggle */}
-        <h2 className="sidebar-title" onClick={toggleSidebar}>
-          Menu
-        </h2>
-        
-        {/* Only show menu links when the sidebar is open */}
-        <ul className={`sidebar-links ${isSidebarOpen ? 'show' : 'hide'}`}>
+      <aside
+        className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}
+        onMouseEnter={() => setIsSidebarOpen(true)} // Open on hover
+        onMouseLeave={() => setIsSidebarOpen(false)} // Close when mouse leaves
+      >
+        {/* Sidebar Links */}
+        <ul className="sidebar-links">
           <li>
-            <Link to="/today"><img src={todayIcon} alt="Today" className="menu-icon small-icon" /> Today</Link>
+            <Link to="/today" className="sidebar-link">
+              <img src={todayIcon} alt="Today" className="menu-icon" />
+              <span className="menu-text">Today</span>
+            </Link>
           </li>
           <li>
-            <Link to="/faculty"><img src={facultyIcon} alt="Faculty" className="menu-icon small-icon" /> Faculty</Link>
+            <Link to="/faculty" className="sidebar-link">
+              <img src={facultyIcon} alt="Faculty" className="menu-icon" />
+              <span className="menu-text">Faculty</span>
+            </Link>
           </li>
           <li>
-            <Link to="/queue"><img src={queueIcon} alt="Queue" className="menu-icon small-icon" /> Queue</Link>
+            <Link to="/queue" className="sidebar-link">
+              <img src={queueIcon} alt="Queue" className="menu-icon" />
+              <span className="menu-text">Queue</span>
+            </Link>
           </li>
         </ul>
       </aside>
@@ -48,10 +56,10 @@ const Dashboard = () => {
       <div className="main-content">
         {/* Navigation Bar */}
         <nav className="dashboard-nav">
-          {/* Open/Close Sidebar Button */}
+          {/* Open/Close Sidebar Button 
           <button className="menu-button" onClick={toggleSidebar}>
             {isSidebarOpen ? 'Close' : 'Open'} Menu
-          </button>
+          </button>*/}
           <h1 className="dashboard-title">Dashboard</h1>
           <div className="nav-icons">
             <img src={notificationIcon} alt="Notifications" className="nav-icon small-icon" />
