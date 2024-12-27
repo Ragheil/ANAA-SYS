@@ -109,6 +109,36 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
+.widget:last-child {
+  margin-right: 0;
+}
+
+.widget h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  
+}
+
+.widget p {
+  font-size: 14px;
+}
+
+.widget.available {
+  background-color: green;
+}
+
+.widget.busy {
+  background-color: yellow;
+}
+
+.widget.offline {
+  background-color: red;
+}
+
+
 .widget-icon {
   margin-top: 10px;
 }

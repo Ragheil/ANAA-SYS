@@ -56,10 +56,6 @@ const Dashboard = () => {
       <div className="main-content">
         {/* Navigation Bar */}
         <nav className="dashboard-nav">
-          {/* Open/Close Sidebar Button 
-          <button className="menu-button" onClick={toggleSidebar}>
-            {isSidebarOpen ? 'Close' : 'Open'} Menu
-          </button>*/}
           <h1 className="dashboard-title">Dashboard</h1>
           <div className="nav-icons">
             <img src={notificationIcon} alt="Notifications" className="nav-icon small-icon" />
@@ -95,6 +91,7 @@ const Dashboard = () => {
           <div className="chart-notifications-container">
             <div className="chart-container">
               <h3>Bar Chart <img src={barGraphIcon} alt="Bar Graph" className="chart-icon bar-graph" /></h3>
+              <div className="bar-chart">Bar Chart Placeholder</div>
             </div>
             <div className="notifications-container">
               <h3>Notifications</h3>
